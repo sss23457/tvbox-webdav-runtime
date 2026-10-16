@@ -1,0 +1,28 @@
+{
+  "spider": "https://raw.githubusercontent.com/sss23457/tvbox-webdav-runtime/main/tvbox-v1.0.1.jar;md5;4fc5e8d967a46f745dca2a8db60a3c2a",
+  "sites": [
+    {
+      "key": "jiaofu_r5",
+      "name": "教父（在线）",
+      "type": 3,
+      "api": "csp_Jiaofu",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": "{\"host\": \"https://www.xn--wcv59z.com\", \"cookie\": \"\"}"
+    },
+    {
+      "key": "webdav_direct_v2",
+      "name": "WebDAV 网盘（直连）",
+      "type": 3,
+      "api": "csp_WebDav",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "ext": "{\"setup\": true, \"profile\": \"pikpak\"}"
+    }
+  ],
+  "parses": [],
+  "lives": [],
+  "flags": []
+}

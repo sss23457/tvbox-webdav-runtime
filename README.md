@@ -1,13 +1,24 @@
 # TVBox WebDAV 运行库
 
-公开下载的不含账号、密码或个人配置的 Android DEX JAR。支持 `csp_WebDav` 直连 HTTPS WebDAV 和 `csp_Jiaofu`。
+公开发布不含账号、密码或私人配置的 Android DEX JAR 与在线配置入口。
 
-TVBox 导入手机自己的私有 JSON，JSON 中的 `spider` 指向本仓库的 JAR 下载地址。WebDAV 专用凭据只存放在手机私有 JSON，勿提交到此仓库。
+## 在线配置（v1.0.1）
 
-Android API 21+，需要宿主提供 Java Spider、OkHttp 3.x 和 Okio 1.x。网盘源只读现有视频，不创建磁力任务，不需要电脑服务。
+在 TVBox 配置地址填写：
 
-版本 v1.0.0：目录列表、中文编码、自然集数排序、子文件夹分组、临时播放链接和直接视频鉴权。已通过 JVM 模拟接口测试及真实 WebDAV 目录/播放链接解析检查；Android 真机最终播放仍需验证。
+```text
+https://sss23457.github.io/tvbox-webdav-runtime/tvbox.json
+```
 
-JAR 下载：[v1.0.0](https://github.com/sss23457/tvbox-webdav-runtime/releases/download/v1.0.0/tvbox.jar)
+加载后选择「WebDAV 网盘（直连）」→「配置 WebDAV 连接」，在 TVBox 原生窗口填写 WebDAV HTTPS 地址、专用用户名、专用密码和根目录。保存后返回「WebDAV 视频」分类刷新。凭据只保存在该手机应用自己的存储中，不上传到 GitHub；后续可从「设置 WebDAV」分类修改。
 
-校验见 `SHA256SUMS.txt`。
+不需要在手机放置本地 JSON 文件，也不需要电脑服务。原有私有 JSON 方式仍受支持。
+
+备用入口（内容相同，JAR 同样走对应域名）：
+
+- Raw：https://raw.githubusercontent.com/sss23457/tvbox-webdav-runtime/main/tvbox-raw.json
+- CDN：https://cdn.jsdelivr.net/gh/sss23457/tvbox-webdav-runtime@main/tvbox-cdn.json
+
+Android API 21+，需要宿主提供 Java Spider、OkHttp 3.x 和 Okio 1.x。支持 `csp_WebDav` 和 `csp_Jiaofu`。网盘源只读取现有视频，磁力需先在网盘应用转存。
+
+已通过 JVM 模拟接口测试，覆盖未配置时的入口和非空详情；真实 WebDAV 目录和播放链接解析已通过。原生设置弹窗及最终播放仍需当前 TVBox APK 真机验证。校验见 SHA256SUMS.txt。
